@@ -1267,7 +1267,7 @@ public:
 		string prefix,
 		ParamDecl[] params,
 		bool isVariadic,
-		AstBlockStatement fbody,
+		BlockStatement fbody,
 	) {
 		// FIXME: can still collide with mixins,
 		// but that should rare enough for now.
@@ -1291,7 +1291,6 @@ public:
 			FunctionType.init,
 			name,
 			[],
-			null,
 		);
 		
 		f.hasContext = true;
@@ -1314,9 +1313,9 @@ public:
 			"__lambda",
 			e.params,
 			false,
-			new AstBlockStatement(
+			new BlockStatement(
 				v.location,
-				[new AstReturnStatement(v.location, v)],
+				[new ReturnStatement(v.location, v)],
 			),
 		);
 	}

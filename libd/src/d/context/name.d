@@ -150,6 +150,11 @@ enum Prefill = [
 	"__dg",
 	"__lambda",
 	"__ctx",
+	// Used to make IR more comprehensible.
+	"entry", "then", "unwind", "resume",
+	"assert.fail", "assert.success", "scope.entry",
+	"endif", "endswitch", "endcatch", "unreachable",
+	"loop.continue", "loop.test", "loop.body", "loop.exit",
 ];
 
 auto getNames() {
